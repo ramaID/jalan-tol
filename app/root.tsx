@@ -9,6 +9,12 @@ import {
 } from "@remix-run/react";
 import { Analytics } from '@vercel/analytics/react';
 
+import styles from "./styles/app.css"
+
+export function links() {
+  return [{ rel: "stylesheet", href: styles }]
+}
+
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
   title: "New Remix App",
