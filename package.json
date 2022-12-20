@@ -5,8 +5,25 @@
     "build": "npm run build:css && remix build",
     "build:css": "tailwindcss -m -i ./styles/app.css -o app/styles/app.css",
     "dev": "concurrently \"npm run dev:css\" \"remix dev\"",
-    "dev:css": "tailwindcss -w -i ./styles/app.css -o app/styles/app.css"
+    "dev:css": "tailwindcss -w -i ./styles/app.css -o app/styles/app.css",
+    "format": "prettier --write .",
+    "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint ."
   },
+  "prettier": {
+    "semi": false,
+    "tabWidth": 2,
+    "printWidth": 60,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "plugins": [
+      "prettier-plugin-tailwindcss"
+    ]
+  },
+  "eslintIgnore": [
+    "/node_modules",
+    "/build",
+    "/public/build"
+  ],
   "dependencies": {
     "@remix-run/node": "^1.7.6",
     "@remix-run/react": "^1.7.6",
@@ -20,12 +37,16 @@
     "@remix-run/dev": "^1.7.6",
     "@remix-run/eslint-config": "^1.7.6",
     "@remix-run/serve": "^1.7.6",
+    "@types/eslint": "^8.4.10",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.9",
     "autoprefixer": "^10.4.13",
     "concurrently": "^7.6.0",
     "eslint": "^8.27.0",
+    "eslint-config-prettier": "^8.5.0",
     "postcss": "^8.4.20",
+    "prettier": "^2.8.1",
+    "prettier-plugin-tailwindcss": "^0.2.1",
     "tailwindcss": "^3.2.4",
     "typescript": "^4.9.3"
   },
