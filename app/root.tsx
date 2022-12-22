@@ -12,15 +12,15 @@ import { json } from '@remix-run/node'
 import { useEffect, useState } from 'react'
 import createServerSupabase from './utils/supabase.server'
 import { createBrowserClient } from '@supabase/auth-helpers-remix'
-
 import type {
   LoaderArgs,
   MetaFunction,
 } from '@remix-run/node'
-import type { SupabaseClient } from '@supabase/supabase-js'
-import type { Database } from './utils/db_types'
 
-import styles from './styles/app.css'
+import type { Database } from './utils/db_types'
+import type { SupabaseClient } from '@supabase/supabase-js'
+
+// import styles from './styles/app.css'
 
 type TypedSupabaseClient = SupabaseClient<Database>
 
@@ -28,9 +28,9 @@ export type SupabaseOutletContext = {
   supabase: TypedSupabaseClient
 }
 
-export function links() {
-  return [{ rel: 'stylesheet', href: styles }]
-}
+// export function links() {
+//   return [{ rel: 'stylesheet', href: styles }]
+// }
 
 export const meta: MetaFunction = () => ({
   charset: 'utf-8',

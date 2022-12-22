@@ -15,18 +15,21 @@ export interface Database {
           name: string | null
           created_at: string | null
           updated_at: string | null
+          user_id: string
         }
         Insert: {
           id?: string
           name?: string | null
           created_at?: string | null
           updated_at?: string | null
+          user_id: string
         }
         Update: {
           id?: string
           name?: string | null
           created_at?: string | null
           updated_at?: string | null
+          user_id?: string
         }
       }
     }
