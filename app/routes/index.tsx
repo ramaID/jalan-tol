@@ -5,6 +5,7 @@ import Login from '~/components/login'
 
 import type { LoaderArgs } from '@remix-run/node'
 import type { ActionArgs } from '@remix-run/node'
+import RealtimeGerbang from '~/components/realtime-gerbang'
 
 export const action = async ({ request }: ActionArgs) => {
   const response = new Response()
@@ -47,7 +48,7 @@ export default function Index() {
   return (
     <>
       <Login />
-      <pre>{JSON.stringify(gerbang, null, 2)}</pre>
+      <RealtimeGerbang serverListGerbang={gerbang} />
       <Form method="post">
         <input type="text" name="name" />
         <button type="submit">Submit</button>
