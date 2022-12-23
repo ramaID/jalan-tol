@@ -16,6 +16,16 @@ export default function Login() {
     }
   }
 
+  const handleLoginGoogle = async () => {
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: 'google',
+    })
+
+    if (error) {
+      console.log(error)
+    }
+  }
+
   const handleLogout = async () => {
     const { error } = await supabase.auth.signOut()
 
@@ -27,7 +37,10 @@ export default function Login() {
   return (
     <>
       <button onClick={handleLogout}>Logout</button>
-      <button onClick={handleLogin}>Login</button>
+      <button onClick={handleLogin}>Login GitHub</button>
+      <button onClick={handleLoginGoogle}>
+        Login Google
+      </button>
     </>
   )
 }
